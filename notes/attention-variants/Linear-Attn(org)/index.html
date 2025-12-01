@@ -1032,14 +1032,19 @@
 
 <h1 id="1"><strong>1. 普通注意力的公式（标准版）</strong><a class="headerlink" href="#1" title="Permanent link">&para;</a></h1>
 <p>标准 self-attention：</p>
-<div class="arithmatex">\[\mathrm{Attn}(Q,K,V) = \mathrm{softmax}\!\left(\frac{QK^\top}{\sqrt{d}}\right)V\]</div>
-<p>复杂度：<span class="arithmatex">\(O(n^2d)\)</span>
-因为 <span class="arithmatex">\(QK^\top\)</span> 是一个 <span class="arithmatex">\(n\times n\)</span> 的矩阵。</p>
+<div class="arithmatex">\[
+\mathrm{Attn}(Q,K,V) = \mathrm{softmax}\!\left(\frac{QK^\top}{\sqrt{d}}\right)V
+\]</div>
+<p>复杂度：<span class="arithmatex">\(O(n^2d)\)</span>，因为 <span class="arithmatex">\(QK^\top\)</span> 是一个 <span class="arithmatex">\(n\times n\)</span> 的矩阵。</p>
 <h1 id="2-linear-attention"><strong>2. linear attention 想要什么？</strong><a class="headerlink" href="#2-linear-attention" title="Permanent link">&para;</a></h1>
-<p>想把注意力写成：
-<span class="arithmatex">\(<span class="arithmatex">\(\mathrm{Attn}(Q,K,V)_t = f(Q_t)^\top\, S_t\)</span>\)</span>
-其中 <span class="arithmatex">\(S_t\)</span> 是可累加的状态：
-<span class="arithmatex">\(<span class="arithmatex">\(S_t = \sum_{j=1}^{t} g(K_j, V_j)\)</span>\)</span></p>
+<p>想把注意力写成：</p>
+<div class="arithmatex">\[
+\mathrm{Attn}(Q,K,V)_t = f(Q_t)^\top\, S_t
+\]</div>
+<p>其中 <span class="arithmatex">\(S_t\)</span> 是可累加的状态：</p>
+<div class="arithmatex">\[
+S_t = \sum_{j=1}^{t} g(K_j, V_j)
+\]</div>
 <ul>
 <li>每一步只更新一次 <span class="arithmatex">\(S_t\)</span></li>
 <li>然后query只做一次 <span class="arithmatex">\(f(Q_t)^\top S_t\)</span></li>
@@ -1047,46 +1052,62 @@
 <p>所以能从 <span class="arithmatex">\(O(n^2)\)</span> 变成 <span class="arithmatex">\(O(n)\)</span>。</p>
 <h1 id="3-linear-attention-kernel-trick"><strong>3. linear attention 的核分解（kernel trick）</strong><a class="headerlink" href="#3-linear-attention-kernel-trick" title="Permanent link">&para;</a></h1>
 <p>softmax 非常黏，不可分解。
-所以把 softmax attention 近似成一个 <strong>可分解核</strong>：
-<span class="arithmatex">\(<span class="arithmatex">\(\exp(QK^\top) \approx \phi(Q) \phi(K)^\top\)</span>\)</span>
-于是注意力变成：
-<span class="arithmatex">\(<span class="arithmatex">\(\mathrm{Attn}(Q,K,V)_t = \sum_{j=1}^{t} \phi(Q_t)^\top \phi(K_j)\, V_j\)</span>\)</span>把 <span class="arithmatex">\(\phi(Q_t)\)</span> 提出来：
-<span class="arithmatex">\(<span class="arithmatex">\(\mathrm{Attn}(Q,K,V)_t = \phi(Q_t)^\top \left( \sum_{j=1}^{t} \phi(K_j) V_j \right)\)</span>\)</span>
-现在定义：
-<span class="arithmatex">\(<span class="arithmatex">\(S_t = \sum_{j=1}^{t} \phi(K_j) V_j\)</span>\)</span></p>
-<p>最终得到：
-<span class="arithmatex">\(<span class="arithmatex">\(\mathrm{Attn}(Q,K,V)_t = \phi(Q_t)^\top S_t\)</span>\)</span>
+所以把 softmax attention 近似成一个 <strong>可分解核</strong>：</p>
+<div class="arithmatex">\[
+\exp(QK^\top) \approx \phi(Q) \phi(K)^\top
+\]</div>
+<p>于是注意力变成：</p>
+<div class="arithmatex">\[
+\mathrm{Attn}(Q,K,V)_t = \sum_{j=1}^{t} \phi(Q_t)^\top \phi(K_j)\, V_j
+\]</div>
+<p>把 <span class="arithmatex">\(\phi(Q_t)\)</span> 提出来：</p>
+<p>$$
+\mathrm{Attn}(Q,K,V)<em j="1">t = \phi(Q_t)^\top \left( \sum</em> \phi(K_j) V_j \right)
+$$
+现在定义：}^{t</p>
+<div class="arithmatex">\[
+S_t = \sum_{j=1}^{t} \phi(K_j) V_j
+\]</div>
+<p>最终得到：</p>
+<p>$$
+\mathrm{Attn}(Q,K,V)_t = \phi(Q_t)^\top S_t
+$$
 这就是 linear attention 最核心的结构。</p>
 <h1 id="4"><strong>4. 为什么它是线性的？</strong><a class="headerlink" href="#4" title="Permanent link">&para;</a></h1>
-<p>对每个新 token：
-更新状态：</p>
-<div class="arithmatex">\[S_t = S_{t-1} + \phi(K_t) V_t$$
-计算输出：
-$$O_t = \phi(Q_t)^\top S_t\]</div>
-<p>两步都是 <span class="arithmatex">\(O(d^2)\)</span> 的，
-整个序列长度 <span class="arithmatex">\(n\)</span> → 总复杂度 <span class="arithmatex">\(O(nd^2)\)</span>。
-相比原本的 <span class="arithmatex">\(O(n^2d)\)</span>，省了一个 n。</p>
+<p>对每个新 token，更新状态：</p>
+<div class="arithmatex">\[
+S_t = S_{t-1} + \phi(K_t) V_t
+\]</div>
+<p>计算输出：</p>
+<div class="arithmatex">\[
+O_t = \phi(Q_t)^\top S_t
+\]</div>
+<p>两步都是 <span class="arithmatex">\(O(d^2)\)</span> 的，整个序列长度 <span class="arithmatex">\(n\)</span> → 总复杂度 <span class="arithmatex">\(O(nd^2)\)</span>。<br />
+相比原本的 <span class="arithmatex">\(O(n^2d)\)</span>，省了一个 <span class="arithmatex">\(n\)</span>。</p>
 <h1 id="5-kv-linear-attention">** 5. 为什么“把位置信息加到 K/V 里会破坏 linear attention”？**<a class="headerlink" href="#5-kv-linear-attention" title="Permanent link">&para;</a></h1>
-<p>因为 linear attention 的累加项要求：
-<span class="arithmatex">\(<span class="arithmatex">\(S_t = \sum_{j=1}^{t} \phi(K_j) V_j\)</span>\)</span>
-必须满足：
+<p>因为 linear attention 的累加项要求：</p>
+<div class="arithmatex">\[
+S_t = \sum_{j=1}^{t} \phi(K_j) V_j
+\]</div>
+<p>必须满足：
 - <span class="arithmatex">\(\phi(K_j)\)</span> 可累加
 - <span class="arithmatex">\(\phi(K_j)\)</span> 不随着 t 再发生变化
 - 位置编码不能让 <span class="arithmatex">\(K_j\)</span> 变得<strong>不可分解</strong>
-如果你把绝对位置编码直接加到 K 上：
-<span class="arithmatex">\(<span class="arithmatex">\(K_j' = K_j + \text{pos}_j\)</span>\)</span>
-那么：
-<span class="arithmatex">\(<span class="arithmatex">\(S_t = \sum_{j=1}^t \phi(K_j + \text{pos}_j)V_j\)</span>\)</span>
-这个结构通常 <strong>不可分解</strong>，
-也不能写成“内容 × 位置”的形式，
-会导致：
+如果你把绝对位置编码直接加到 K 上：</p>
+<div class="arithmatex">\[
+K_j' = K_j + \text{pos}_j
+\]</div>
+<p>那么：</p>
+<div class="arithmatex">\[
+S_t = \sum_{j=1}^t \phi(K_j + \text{pos}_j)V_j
+\]</div>
+<p>这个结构通常 <strong>不可分解</strong>，也不能写成“内容 × 位置”的形式，会导致：
 - 状态 S 失效
 - prefix 不能缓存
 - 必须重新算所有 K_j
-于是：
-<strong>linear attention architecture 无法工作。</strong></p>
-<p>对于绝对位置编码，通常<span class="arithmatex">\(\phi(K_j + p_j)\neq \phi(K_j)+\phi(p_j)\)</span> ， 所有位置信息会混在一起。
-对于相对位置编码，<span class="arithmatex">\(\mathrm{score}(t,j)=Q_t^\top K_j + Q_t^\top a_{t-j}\)</span>， 要对 <span class="arithmatex">\(a_{t-j}\)</span> 做实时更新，<strong>累加状态无法构建</strong>。</p>
+于是：<strong>linear attention architecture 无法工作。</strong></p>
+<p>对于绝对位置编码，通常 <span class="arithmatex">\(\phi(K_j + p_j)\neq \phi(K_j)+\phi(p_j)\)</span>，所有位置信息会混在一起。<br />
+对于相对位置编码，<span class="arithmatex">\(\mathrm{score}(t,j)=Q_t^\top K_j + Q_t^\top a_{t-j}\)</span>，要对 <span class="arithmatex">\(a_{t-j}\)</span> 做实时更新，<strong>累加状态无法构建</strong>。</p>
 
 
 
