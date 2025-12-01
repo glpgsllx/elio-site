@@ -10,7 +10,7 @@
       
       
       
-        <link rel="canonical" href="https://example.com/notes/systems/vllm/intro/">
+        <link rel="canonical" href="https://example.com/notes/systems/vllm/%E5%91%A8%E8%BE%B9%26%E4%BC%98%E5%8C%96/Distributed%20Inference/">
       
       
       
@@ -18,19 +18,19 @@
         
       
       
-      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <link rel="icon" href="../../../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
     
     
       
-        <title>vLLM 代码库 - Elio AI Hub</title>
+        <title>Distributed Inference - Elio AI Hub</title>
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.618322db.min.css">
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.618322db.min.css">
       
         
-        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -53,7 +53,7 @@
     
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/jetbrains-mono@5.0.8/400.css">
     
-    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#vllm" class="md-skip">
+        <a href="#why" class="md-skip">
           跳转至
         </a>
       
@@ -92,7 +92,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="页眉">
-    <a href="../../../.." title="Elio AI Hub" class="md-header__button md-logo" aria-label="Elio AI Hub" data-md-component="logo">
+    <a href="../../../../.." title="Elio AI Hub" class="md-header__button md-logo" aria-label="Elio AI Hub" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -112,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              vLLM 代码库
+              Distributed Inference
             
           </span>
         </div>
@@ -223,7 +223,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../.." class="md-tabs__link">
+      <a href="../../../../.." class="md-tabs__link">
         
   
   
@@ -244,7 +244,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../../about/" class="md-tabs__link">
+        <a href="../../../../../about/" class="md-tabs__link">
           
   
   
@@ -264,7 +264,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../" class="md-tabs__link">
+        <a href="../../../../" class="md-tabs__link">
           
   
   
@@ -284,7 +284,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../../research/" class="md-tabs__link">
+        <a href="../../../../../research/" class="md-tabs__link">
           
   
   
@@ -304,7 +304,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../../interviews/" class="md-tabs__link">
+        <a href="../../../../../interviews/" class="md-tabs__link">
           
   
   
@@ -340,7 +340,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../../.." title="Elio AI Hub" class="md-nav__button md-logo" aria-label="Elio AI Hub" data-md-component="logo">
+    <a href="../../../../.." title="Elio AI Hub" class="md-nav__button md-logo" aria-label="Elio AI Hub" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -370,7 +370,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../.." class="md-nav__link">
+      <a href="../../../../.." class="md-nav__link">
         
   
   
@@ -447,7 +447,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../about/" class="md-nav__link">
+      <a href="../../../../../about/" class="md-nav__link">
         
   
   
@@ -532,7 +532,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../" class="md-nav__link">
+      <a href="../../../../" class="md-nav__link">
         
   
   
@@ -560,7 +560,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../efficient-inference/" class="md-nav__link">
+      <a href="../../../../efficient-inference/" class="md-nav__link">
         
   
   
@@ -588,7 +588,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../positional-encodings/" class="md-nav__link">
+      <a href="../../../../positional-encodings/" class="md-nav__link">
         
   
   
@@ -616,7 +616,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../attention-variants/" class="md-nav__link">
+      <a href="../../../../attention-variants/" class="md-nav__link">
         
   
   
@@ -644,7 +644,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../" class="md-nav__link">
+      <a href="../../../" class="md-nav__link">
         
   
   
@@ -672,7 +672,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../miscellaneous/" class="md-nav__link">
+      <a href="../../../../miscellaneous/" class="md-nav__link">
         
   
   
@@ -757,7 +757,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../research/" class="md-nav__link">
+      <a href="../../../../../research/" class="md-nav__link">
         
   
   
@@ -842,7 +842,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../interviews/" class="md-nav__link">
+      <a href="../../../../../interviews/" class="md-nav__link">
         
   
   
@@ -870,7 +870,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../interviews/algo/" class="md-nav__link">
+      <a href="../../../../../interviews/algo/" class="md-nav__link">
         
   
   
@@ -898,7 +898,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../interviews/machine-learning/" class="md-nav__link">
+      <a href="../../../../../interviews/machine-learning/" class="md-nav__link">
         
   
   
@@ -926,7 +926,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../interviews/system-design/" class="md-nav__link">
+      <a href="../../../../../interviews/system-design/" class="md-nav__link">
         
   
   
@@ -954,7 +954,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../interviews/llm-engineer/" class="md-nav__link">
+      <a href="../../../../../interviews/llm-engineer/" class="md-nav__link">
         
   
   
@@ -982,7 +982,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../interviews/project-review/" class="md-nav__link">
+      <a href="../../../../../interviews/project-review/" class="md-nav__link">
         
   
   
@@ -1030,32 +1030,71 @@
   
 
 
-<h1 id="vllm">vLLM 代码库<a class="headerlink" href="#vllm" title="Permanent link">&para;</a></h1>
-<p>模块
-- Entrypoint (LLM, API server)
-- Engine
-- Scheduler
-- KV Cache manager
-- Evictor
-- Worker
-- Model executer (Model runner)
-- Modelling
-- Attention backend</p>
-<p>周边
-- Preprocessing / Postprocessing (tokenizer, detokenizer, sampler, multimodal processor)
-- Distributed
-- 'torch.compile'
-- Observability
-- Config 
-- Testing
-- CI / CD
-- Formatting</p>
-<p>优化
-- Speculative decoding
-- Disaggregated prefilling
-- Chunked prefill
-- Cascade inference
-- Prefix caching</p>
+<ul>
+<li>Why distributed inference?</li>
+<li>Typed of distributed inference: TP / EP / PP</li>
+<li>PD Disaggregation</li>
+</ul>
+<h1 id="why">Why?<a class="headerlink" href="#why" title="Permanent link">&para;</a></h1>
+<ol>
+<li>模型单卡放不下</li>
+<li>推理的不同阶段都能充分利用硬件资源<ol>
+<li>prefil：计算密集，IO要求不高</li>
+<li>decode：内存密集型。batch size 大了才效率高</li>
+</ol>
+</li>
+</ol>
+<h2 id="_1">传统的分布式方法<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h2 id="tensor-parallel">Tensor parallel<a class="headerlink" href="#tensor-parallel" title="Permanent link">&para;</a></h2>
+<p>把模型同一层的weights拆成好几份，分到不同的硬件上各自计算，然后 all-reduce 重新汇总起来。
+模型的每一层会被切成几块（比如四分之一、八分之一），每个 worker/GPU 只持有自己那一片参数，并对完整输入做自己的那部分计算；等所有分片都算完后，再把这些局部结果拼接起来，得到最终的层输出。</p>
+<p>vllm/distributed/parallel_state.py
+<div class="highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>_TP: GroupCoordinator | None = None
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>def get_tp_group() -&gt; GroupCoordinator:
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    assert _TP is not None, &quot;tensor model parallel group is not initialized&quot;
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    return _TP
+</span></code></pre></div></p>
+<div class="highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a># message queue broadcaster is only used in tensor model parallel group
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>_TP = init_model_parallel_group(
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>    group_ranks,
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>    get_world_group().local_rank,
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>    backend,
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>    use_message_queue_broadcaster=True,
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>    group_name=&quot;tp&quot;,
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>)
+</span></code></pre></div>
+<h2 id="pipeline-parallel">Pipeline parallel<a class="headerlink" href="#pipeline-parallel" title="Permanent link">&para;</a></h2>
+<p>把<strong>不同层</strong>分布到不同 GPU 上串联起来。
+<div class="highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>class GroupCoordinator:
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    rank: int # global rank
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    ranks: list[int] # global ranks in the group
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>    world_size: int # size of the group
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>    # difference between `local_rank` and `rank_in_group`:
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>    # if we have a group of size 4 across two nodes:
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>    # Process | Node | Rank | Local Rank | Rank in Group
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>    # 0 | 0 | 0 | 0 | 0
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>    # 1 | 0 | 1 | 1 | 1
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>    # 2 | 1 | 2 | 0 | 2
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>    # 3 | 1 | 3 | 1 | 3
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>    local_rank: int # local rank used to assign devices
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>    rank_in_group: int # rank inside the group
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>    cpu_group: ProcessGroup # group for CPU communication
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>    device_group: ProcessGroup # group for device communication
+</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>    # device communicator (if use_device_communicator=True)
+</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>    device_communicator: DeviceCommunicatorBase | None
+</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>    mq_broadcaster: Any | None # shared memory broadcaster
+</span></code></pre></div></p>
+<p>比如 TP=2, PP=4, 则rank为0-7
+ranks：TP的，每个ranks长度为2；PP的，每个ranks长度为4。
+local_rank：给每个rank制定gpu，指定在哪一个GPU上allocate。（受CUDA_VISIBLE_DEVICES影响）
+通信有两种渠道
+- CPU communication，慢，但是可控性更好。
+- 基于 device 的，能利用上硬件特性。
+    - <strong>NV Link</strong>：GPU和GPU之间的 direct communication。物理上的一个连接；
+    - <strong>Infinity Bind</strong>: 也是一个硬件。Between nodes
+    - <strong>RDMA</strong>: Remote direct memory access. 可以避免经过 Operating System，不用过CISCO。</p>
 
 
 
@@ -1148,12 +1187,12 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.instant", "navigation.tabs", "navigation.top", "navigation.tracking", "toc.integrate", "content.code.copy", "content.tabs.link", "header.autohide"], "search": "../../../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../../..", "features": ["navigation.instant", "navigation.tabs", "navigation.top", "navigation.tracking", "toc.integrate", "content.code.copy", "content.tabs.link", "header.autohide"], "search": "../../../../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      <script src="../../../../../assets/javascripts/bundle.e71a0d61.min.js"></script>
       
-        <script src="../../../../javascripts/mathjax.js"></script>
+        <script src="../../../../../javascripts/mathjax.js"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       

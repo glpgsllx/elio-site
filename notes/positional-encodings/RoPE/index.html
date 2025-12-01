@@ -10,7 +10,7 @@
       
       
       
-        <link rel="canonical" href="https://example.com/notes/systems/vllm/intro/">
+        <link rel="canonical" href="https://example.com/notes/positional-encodings/RoPE/">
       
       
       
@@ -18,19 +18,19 @@
         
       
       
-      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
     
     
       
-        <title>vLLM 代码库 - Elio AI Hub</title>
+        <title>RoPE - Elio AI Hub</title>
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.618322db.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.618322db.min.css">
       
         
-        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -53,7 +53,7 @@
     
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/jetbrains-mono@5.0.8/400.css">
     
-    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#vllm" class="md-skip">
+        <a href="#1-absolute" class="md-skip">
           跳转至
         </a>
       
@@ -92,7 +92,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="页眉">
-    <a href="../../../.." title="Elio AI Hub" class="md-header__button md-logo" aria-label="Elio AI Hub" data-md-component="logo">
+    <a href="../../.." title="Elio AI Hub" class="md-header__button md-logo" aria-label="Elio AI Hub" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -112,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              vLLM 代码库
+              RoPE
             
           </span>
         </div>
@@ -223,7 +223,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../.." class="md-tabs__link">
+      <a href="../../.." class="md-tabs__link">
         
   
   
@@ -244,7 +244,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../../about/" class="md-tabs__link">
+        <a href="../../../about/" class="md-tabs__link">
           
   
   
@@ -264,7 +264,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../" class="md-tabs__link">
+        <a href="../../" class="md-tabs__link">
           
   
   
@@ -284,7 +284,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../../research/" class="md-tabs__link">
+        <a href="../../../research/" class="md-tabs__link">
           
   
   
@@ -304,7 +304,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../../interviews/" class="md-tabs__link">
+        <a href="../../../interviews/" class="md-tabs__link">
           
   
   
@@ -340,7 +340,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../../.." title="Elio AI Hub" class="md-nav__button md-logo" aria-label="Elio AI Hub" data-md-component="logo">
+    <a href="../../.." title="Elio AI Hub" class="md-nav__button md-logo" aria-label="Elio AI Hub" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -370,7 +370,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../.." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         
   
   
@@ -447,7 +447,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../about/" class="md-nav__link">
+      <a href="../../../about/" class="md-nav__link">
         
   
   
@@ -532,7 +532,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../" class="md-nav__link">
+      <a href="../../" class="md-nav__link">
         
   
   
@@ -560,7 +560,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../efficient-inference/" class="md-nav__link">
+      <a href="../../efficient-inference/" class="md-nav__link">
         
   
   
@@ -588,7 +588,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../positional-encodings/" class="md-nav__link">
+      <a href="../" class="md-nav__link">
         
   
   
@@ -616,7 +616,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../attention-variants/" class="md-nav__link">
+      <a href="../../attention-variants/" class="md-nav__link">
         
   
   
@@ -644,7 +644,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../" class="md-nav__link">
+      <a href="../../systems/" class="md-nav__link">
         
   
   
@@ -672,7 +672,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../miscellaneous/" class="md-nav__link">
+      <a href="../../miscellaneous/" class="md-nav__link">
         
   
   
@@ -757,7 +757,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../research/" class="md-nav__link">
+      <a href="../../../research/" class="md-nav__link">
         
   
   
@@ -842,7 +842,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../interviews/" class="md-nav__link">
+      <a href="../../../interviews/" class="md-nav__link">
         
   
   
@@ -870,7 +870,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../interviews/algo/" class="md-nav__link">
+      <a href="../../../interviews/algo/" class="md-nav__link">
         
   
   
@@ -898,7 +898,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../interviews/machine-learning/" class="md-nav__link">
+      <a href="../../../interviews/machine-learning/" class="md-nav__link">
         
   
   
@@ -926,7 +926,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../interviews/system-design/" class="md-nav__link">
+      <a href="../../../interviews/system-design/" class="md-nav__link">
         
   
   
@@ -954,7 +954,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../interviews/llm-engineer/" class="md-nav__link">
+      <a href="../../../interviews/llm-engineer/" class="md-nav__link">
         
   
   
@@ -982,7 +982,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../interviews/project-review/" class="md-nav__link">
+      <a href="../../../interviews/project-review/" class="md-nav__link">
         
   
   
@@ -1030,32 +1030,111 @@
   
 
 
-<h1 id="vllm">vLLM 代码库<a class="headerlink" href="#vllm" title="Permanent link">&para;</a></h1>
-<p>模块
-- Entrypoint (LLM, API server)
-- Engine
-- Scheduler
-- KV Cache manager
-- Evictor
-- Worker
-- Model executer (Model runner)
-- Modelling
-- Attention backend</p>
-<p>周边
-- Preprocessing / Postprocessing (tokenizer, detokenizer, sampler, multimodal processor)
-- Distributed
-- 'torch.compile'
-- Observability
-- Config 
-- Testing
-- CI / CD
-- Formatting</p>
-<p>优化
-- Speculative decoding
-- Disaggregated prefilling
-- Chunked prefill
-- Cascade inference
-- Prefix caching</p>
+<blockquote>
+<p>Despite the effectiveness of these approaches, they commonly add the position information to the context representation and thus render them unsuitable for the linear self-attention architecture. <a href="Linear-Attn(org).md">Linear-Attn(org)</a></p>
+</blockquote>
+<p>3个特性
+- sequence length flexibility
+- decaying inter-token dependency with increasing relative distances
+- capability of equipping the linear self-attention with relative position encoding</p>
+<p>核心公式：
+$$
+q_m = f_q(x_m, m), \quad k_n = f_k(x_n, n), \quad v_n = f_v(x_n. n)
+$$</p>
+<h1 id="1-absolute">1. Absolute<a class="headerlink" href="#1-absolute" title="Permanent link">&para;</a></h1>
+<p><img alt="Absolute positional encoding" src="../img/Pasted%20image%2020251125162111.png" />
+<span class="arithmatex">\(i = 0, 1, 2, \dots, \text{sequence length}-1\)</span>
+<span class="arithmatex">\(t = 0, 1, 2, \dots, \frac{d}{2}-1\)</span>
+<span class="arithmatex">\(k = i\)</span></p>
+<h1 id="2-relative">2. Relative<a class="headerlink" href="#2-relative" title="Permanent link">&para;</a></h1>
+<h2 id="21-self-attention-with-relative-position-representations">2.1 Self-attention with relative position representations<a class="headerlink" href="#21-self-attention-with-relative-position-representations" title="Permanent link">&para;</a></h2>
+<p>$$
+\begin{aligned}
+f_q(x_m) := W_qx_m \
+f_k(x_n, n) := W_k(x_n + p_r^k)\
+f_v(x_n, n) := W_v(x_n + p_r^v)\
+\end{aligned}
+$$
+<span class="arithmatex">\(p_r^k, p_r^v \in \mathbb{R}^d\)</span> are trainable relative position embeddings.
+<span class="arithmatex">\(r = clip (m−n,r_\min,r_\max)\)</span> represents the relative distance between position m and n.</p>
+<h2 id="22-further-optimization">2.2 Further optimization<a class="headerlink" href="#22-further-optimization" title="Permanent link">&para;</a></h2>
+<p>change <span class="arithmatex">\(q_m^{\top} k_n\)</span>
+很多相对位置编码方法，本质上都是把位置 embedding（无论是绝对位置 <span class="arithmatex">\(p_i\)</span> 还是相对位置 <span class="arithmatex">\(p_{i−j}\)</span> 直接加到 Q、K、V 里面</p>
+<p>其中效率最高的是 </p>
+<blockquote>
+<p>Deberta: Decoding-enhanced bert with disentangled attention.</p>
+</blockquote>
+<p>$$
+q_m^\top k_n
+= x_m^\top W_q^\top W_k x_n
++ x_m^\top W_q^\top W_k \,\tilde p_{\,m-n}
++ \tilde p_{\,m-n}^\top W_q^\top W_k x_n .
+$$
+- <span class="arithmatex">\(\tilde p_{m-n}\)</span> 是相对位置 embedding（DeBERTa 使用 disentangled 方式），
+- 第一项是“内容–内容”注意力，
+- 第二项是“内容–位置”，
+- 第三项是“位置–内容”。</p>
+<p>属于“加法型位置注入”，对后续的线性化、自回归缓存等机制依然不友好[[Linear-Attn(org)]]</p>
+<h1 id="3-rope">3. RoPE<a class="headerlink" href="#3-rope" title="Permanent link">&para;</a></h1>
+<p>希望注意力分数 qₘᵀkₙ 不要依赖 token 各自的绝对位置 m、n，而只依赖它们的“相对位置 m−n“</p>
+<p>定义一个函数，只考虑2个词向量和位置差
+<span class="arithmatex">\(<span class="arithmatex">\(&lt;f_q(x_m, m), f_k(x_n, n)&gt; = g(x_m, x_n, m - n)\)</span>\)</span></p>
+<h2 id="31-2d-case"><strong>3.1 2D case</strong><a class="headerlink" href="#31-2d-case" title="Permanent link">&para;</a></h2>
+<p>在二维情形（d = 2）下，可以利用复数平面上的几何性质来展示 RoPE 的核心思想。</p>
+<h3 id="query-key"><strong>复数形式的 Query / Key</strong><a class="headerlink" href="#query-key" title="Permanent link">&para;</a></h3>
+<p>令位置为 m、n 的向量经过线性变换后分别为：
+<span class="arithmatex">\(W_q x_m\)</span> 和 <span class="arithmatex">\(W_k x_n\)</span></p>
+<p>RoPE 将它们表示为复数并按位置进行旋转：
+$$
+f_q(x_m, m) = (W_q x_m) e^{im\theta}
+$$$$
+f_k(x_n, n) = (W_k x_n) e^{in\theta}
+$$其中 <span class="arithmatex">\(\theta\)</span> 是预设的非零常数。</p>
+<h3 id="_1"><strong>相对位置如何出现？</strong><a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<p>注意力的核心是内积：
+$$
+g(x_m, x_n, m-n) = \mathrm{Re}\big[(W_q x_m)(W_k x_n)^* e^{i(m-n)\theta}\big]
+$$
+这里的 <span class="arithmatex">\(\mathrm{Re}(\cdot)^*\)</span> 表示复共轭（<span class="arithmatex">\(a+bi\)</span> 的 conjugate complex number 是 <span class="arithmatex">\(a-bi\)</span>），其作用是让 Key 的旋转方向相反（加变成减），从而得到 <span class="arithmatex">\(m-n\)</span>。</p>
+<h3 id="_2"><strong>旋转矩阵形式</strong><a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p>二维复数旋转等价于旋转矩阵
+q的旋转矩阵：
+$$</p>
+<p>f_{{q,k}}(x_m, m) =</p>
+<p>\begin{pmatrix}</p>
+<p>\cos m\theta &amp; -\sin m\theta \</p>
+<p>\sin m\theta &amp; \cos m\theta</p>
+<p>\end{pmatrix}</p>
+<p>\begin{pmatrix}</p>
+<p>W^{(11)}<em _q_k="{q,k">{{q,k}} &amp; W^{(12)}</em> \}</p>
+<p>W^{(21)}<em _q_k="{q,k">{{q,k}} &amp; W^{(22)}</em>}</p>
+<p>\end{pmatrix}</p>
+<p>\begin{pmatrix}</p>
+<p>x_m^{(1)} \</p>
+<p>x_m^{(2)}</p>
+<p>\end{pmatrix}</p>
+<p>$$
+k的，只要把m换成n</p>
+<p><strong>在二维空间里，对词向量做一次线性变换后，再按“位置 index × 固定角度”旋转它。</strong></p>
+<p><strong>这样 qᵀk 的结果自然变成依赖 m−n，于是实现了相对位置编码。</strong></p>
+<p><strong>这就是 RoPE 的几何直觉：用旋转取代加法，把绝对位置变成相对位置。</strong></p>
+<h2 id="32-general-form">3.2 General Form<a class="headerlink" href="#32-general-form" title="Permanent link">&para;</a></h2>
+<p><img alt="RoPE general form" src="../img/Pasted%20image%2020251128132128.png" /></p>
+<p>$$ 
+\Theta = \left{ \theta_i=10000^{-2(i-1)/d}, i\in \left[ 1,2,\dots, d/2 \right] \right}
+$$
+把这个式子放在<span class="arithmatex">\(q_m^{\top} k_n\)</span> 上
+$$
+q_m^{\top} k_n = (R_{\Theta, m}^d W_qx_m)^{\top}(R_{\Theta, n}^d W_kx_n) = x^{\top}W_q R_{\Theta, (n-m)}^d W_kx_n
+$$
+<strong>以前的位置编码把位置 “加” 到内容上，会污染语义，并且要在注意力公式里额外加入复杂的相对位置项。</strong></p>
+<p><strong>RoPE 使用的是 “乘法式位置编码”（旋转），无需修改注意力结构，相对位置 (n−m) 会自然在旋转中出现。</strong></p>
+<h2 id="33-properties">3.3 Properties<a class="headerlink" href="#33-properties" title="Permanent link">&para;</a></h2>
+<h3 id="331-long-term-decay">3.3.1 Long-term decay<a class="headerlink" href="#331-long-term-decay" title="Permanent link">&para;</a></h3>
+<h3 id="332-linear-attention">3.3.2 Linear Attention<a class="headerlink" href="#332-linear-attention" title="Permanent link">&para;</a></h3>
+<p><img alt="RoPE with linear attention" src="../img/Pasted%20image%2020251128134804.png" />
+用线性函数，比如 $$ \phi(x) = elu(x) + 1 $$
+分母不变，防止为0</p>
 
 
 
@@ -1148,12 +1227,12 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.instant", "navigation.tabs", "navigation.top", "navigation.tracking", "toc.integrate", "content.code.copy", "content.tabs.link", "header.autohide"], "search": "../../../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.instant", "navigation.tabs", "navigation.top", "navigation.tracking", "toc.integrate", "content.code.copy", "content.tabs.link", "header.autohide"], "search": "../../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.e71a0d61.min.js"></script>
       
-        <script src="../../../../javascripts/mathjax.js"></script>
+        <script src="../../../javascripts/mathjax.js"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
