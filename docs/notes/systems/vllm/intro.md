@@ -1,5 +1,31 @@
-# vLLM 体系总览
+# vLLM 代码库
 
-- 服务组件拆分：调度器、执行器、KVManager
-- 线程池与 token-swapping 流程示意
-- [KV Cache 管理](kv-cache.md)
+模块
+- Entrypoint (LLM, API server)
+- Engine
+- Scheduler
+- KV Cache manager
+- Evictor
+- Worker
+- Model executer (Model runner)
+- Modelling
+- Attention backend
+
+周边
+- Preprocessing / Postprocessing (tokenizer, detokenizer, sampler, multimodal processor)
+- Distributed
+- 'torch.compile'
+- Observability
+- Config 
+- Testing
+- CI / CD
+- Formatting
+
+优化
+- Speculative decoding
+- Disaggregated prefilling
+- Chunked prefill
+- Cascade inference
+- Prefix caching
+
+

@@ -4,21 +4,19 @@
     "type": "split",
     "children": [
       {
-        "id": "8ca976266871f5c3",
+        "id": "6f4c90ae8da8e393",
         "type": "tabs",
         "children": [
           {
-            "id": "5a342aa62a4acf1c",
+            "id": "3cde62b3be3fa1b7",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "image",
               "state": {
-                "file": "docs/index.md",
-                "mode": "source",
-                "source": false
+                "file": "docs/notes/positional-encodings/img/Pasted image 20251128134804.png"
               },
-              "icon": "lucide-file",
-              "title": "index"
+              "icon": "lucide-image",
+              "title": "Pasted image 20251128134804"
             }
           }
         ]
@@ -78,7 +76,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 220.5
   },
   "right": {
     "id": "61798b7d5f843525",
@@ -94,7 +92,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/index.md",
+                "file": "docs/notes/positional-encodings/RoPE.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +102,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for index"
+              "title": "Backlinks for RoPE"
             }
           },
           {
@@ -113,12 +111,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/index.md",
+                "file": "docs/notes/positional-encodings/RoPE.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from index"
+              "title": "Outgoing links from RoPE"
             }
           },
           {
@@ -156,13 +154,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/index.md",
+                "file": "docs/notes/positional-encodings/RoPE.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of index"
+              "title": "Outline of RoPE"
             }
           }
         ]
@@ -183,34 +181,51 @@
       "bases:Create new base": false
     }
   },
-  "active": "5a342aa62a4acf1c",
+  "active": "3c49a0d4e2a1a0d1",
   "lastOpenFiles": [
-    "docs/notes/systems/vllm/kv-cache.md",
+    "docs/notes/systems/vllm/周边&优化/Distributed Inference.md",
+    "docs/notes/systems/vllm/模块/Attention backend.md",
     "docs/notes/systems/vllm/intro.md",
-    "docs/notes/systems/flashattention/kernel-notes.md",
-    "docs/notes/systems/vllm",
-    "docs/notes/systems/flashattention",
-    "docs/javascripts/mathjax.js",
-    "docs/javascripts",
-    "docs/interviews/project-review/index.md",
-    "docs/interviews/llm-engineer/index.md",
-    "docs/interviews/system-design/index.md",
-    "docs/interviews/machine-learning/index.md",
-    "docs/interviews/algo/index.md",
-    "docs/interviews/index.md",
     "docs/research/index.md",
-    "docs/notes/miscellaneous/index.md",
-    "docs/notes/systems/index.md",
+    "docs/research/ANGEL-lab/第二周.md",
+    "docs/research/ANGEL-lab",
+    "docs/notes/systems/vllm/周边&优化",
+    "docs/notes/positional-encodings/RoPE.md",
+    "docs/notes/positional-encodings/img/Pasted image 20251128134804.png",
+    "docs/notes/positional-encodings/img/Pasted image 20251125162111.png",
+    "docs/notes/positional-encodings/img",
+    "docs/notes/positional-encodings/img/Pasted image 20251128132128.png",
+    "docs/notes/attention-variants/Linear-Attn(org).md",
+    "docs/notes/systems/flashattention/kernel-notes.md",
+    "docs/notes/systems/vllm/kv-cache.md",
+    "docs/interviews/algo/index.md",
+    "docs/notes/attention-variants/MLA.md",
     "docs/notes/attention-variants/index.md",
-    "docs/notes/positional-encodings/index.md",
     "docs/notes/efficient-inference/index.md",
+    "docs/notes/miscellaneous/index.md",
+    "docs/notes/positional-encodings/index.md",
     "docs/notes/index.md",
-    "docs/about/index.md",
-    "docs/interviews/system-design",
-    "docs/interviews/project-review",
-    "docs/interviews/machine-learning",
-    "docs/interviews/llm-engineer",
-    "docs/interviews/algo",
-    "docs/interviews"
+    "docs/index.md",
+    "docs/notes/attention-variants/img/Pasted image 20251125153732.png",
+    "docs/notes/attention-variants/img/Pasted image 20251125152004.png",
+    "docs/notes/attention-variants/img/Pasted image 20251125151809.png",
+    "docs/notes/attention-variants/img",
+    "docs/notes/attention-variants/img/Pasted image 20251125151259.png",
+    "docs/notes/systems/vllm/模块/Modeling.md",
+    "docs/notes/systems/vllm/模块/Model_executer.md",
+    "docs/notes/systems/vllm/模块/Worker.md",
+    "docs/notes/systems/vllm/模块/Evictor.md",
+    "docs/notes/systems/vllm/模块/KV Cache Manager.md",
+    "docs/notes/systems/vllm/模块/Scheduler.md",
+    "docs/notes/systems/vllm/模块/Engine.md",
+    "docs/notes/systems/vllm/模块/Entrypoint.md",
+    "Untitled 1.base",
+    "Untitled.base",
+    "docs/notes/systems/vllm/模块",
+    "docs/notes/systems/vllm/vllm_月球大叔/vllm_01.md",
+    "docs/notes/systems/vllm/vllm_月球大叔",
+    "site/search/search_index.json",
+    "site/search",
+    "site/assets/images/favicon.png"
   ]
 }
