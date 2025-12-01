@@ -1033,10 +1033,12 @@
 <blockquote>
 <p>Despite the effectiveness of these approaches, they commonly add the position information to the context representation and thus render them unsuitable for the linear self-attention architecture. <a href="../../attention-variants/Linear-Attn%28org%29/">Linear-Attn(org)</a></p>
 </blockquote>
-<p>3个特性
-- sequence length flexibility
-- decaying inter-token dependency with increasing relative distances
-- capability of equipping the linear self-attention with relative position encoding</p>
+<p>3个特性</p>
+<ul>
+<li>sequence length flexibility</li>
+<li>decaying inter-token dependency with increasing relative distances</li>
+<li>capability of equipping the linear self-attention with relative position encoding</li>
+</ul>
 <p>核心公式：
 $$
 q_m = f_q(x_m, m), \quad k_n = f_k(x_n, n), \quad v_n = f_v(x_n. n)

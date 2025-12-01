@@ -42,6 +42,7 @@ q_m^\top k_n
 + x_m^\top W_q^\top W_k \,\tilde p_{\,m-n}
 + \tilde p_{\,m-n}^\top W_q^\top W_k x_n .
 $$
+
 - $\tilde p_{m-n}$ 是相对位置 embedding（DeBERTa 使用 disentangled 方式），
 - 第一项是“内容–内容”注意力，
 - 第二项是“内容–位置”，
