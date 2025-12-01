@@ -10,7 +10,7 @@
       
       
       
-        <link rel="canonical" href="https://example.com/notes/systems/vllm/intro/">
+        <link rel="canonical" href="https://example.com/notes/attention-variants/Linear-Attn%28org%29/">
       
       
       
@@ -18,19 +18,19 @@
         
       
       
-      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
     
     
       
-        <title>vLLM 代码库 - Elio AI Hub</title>
+        <title>1. 普通注意力的公式（标准版） - Elio AI Hub</title>
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.618322db.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.618322db.min.css">
       
         
-        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -53,7 +53,7 @@
     
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/jetbrains-mono@5.0.8/400.css">
     
-    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#vllm" class="md-skip">
+        <a href="#1" class="md-skip">
           跳转至
         </a>
       
@@ -92,7 +92,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="页眉">
-    <a href="../../../.." title="Elio AI Hub" class="md-header__button md-logo" aria-label="Elio AI Hub" data-md-component="logo">
+    <a href="../../.." title="Elio AI Hub" class="md-header__button md-logo" aria-label="Elio AI Hub" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -112,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              vLLM 代码库
+              1. 普通注意力的公式（标准版）
             
           </span>
         </div>
@@ -223,7 +223,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../.." class="md-tabs__link">
+      <a href="../../.." class="md-tabs__link">
         
   
   
@@ -244,7 +244,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../../about/" class="md-tabs__link">
+        <a href="../../../about/" class="md-tabs__link">
           
   
   
@@ -264,7 +264,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../" class="md-tabs__link">
+        <a href="../../" class="md-tabs__link">
           
   
   
@@ -284,7 +284,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../../research/" class="md-tabs__link">
+        <a href="../../../research/" class="md-tabs__link">
           
   
   
@@ -304,7 +304,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../../interviews/" class="md-tabs__link">
+        <a href="../../../interviews/" class="md-tabs__link">
           
   
   
@@ -340,7 +340,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../../.." title="Elio AI Hub" class="md-nav__button md-logo" aria-label="Elio AI Hub" data-md-component="logo">
+    <a href="../../.." title="Elio AI Hub" class="md-nav__button md-logo" aria-label="Elio AI Hub" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -370,7 +370,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../.." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         
   
   
@@ -447,7 +447,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../about/" class="md-nav__link">
+      <a href="../../../about/" class="md-nav__link">
         
   
   
@@ -532,7 +532,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../" class="md-nav__link">
+      <a href="../../" class="md-nav__link">
         
   
   
@@ -560,7 +560,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../efficient-inference/" class="md-nav__link">
+      <a href="../../efficient-inference/" class="md-nav__link">
         
   
   
@@ -588,7 +588,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../positional-encodings/" class="md-nav__link">
+      <a href="../../positional-encodings/" class="md-nav__link">
         
   
   
@@ -616,7 +616,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../attention-variants/" class="md-nav__link">
+      <a href="../" class="md-nav__link">
         
   
   
@@ -644,7 +644,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../" class="md-nav__link">
+      <a href="../../systems/" class="md-nav__link">
         
   
   
@@ -672,7 +672,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../miscellaneous/" class="md-nav__link">
+      <a href="../../miscellaneous/" class="md-nav__link">
         
   
   
@@ -757,7 +757,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../research/" class="md-nav__link">
+      <a href="../../../research/" class="md-nav__link">
         
   
   
@@ -842,7 +842,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../interviews/" class="md-nav__link">
+      <a href="../../../interviews/" class="md-nav__link">
         
   
   
@@ -870,7 +870,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../interviews/algo/" class="md-nav__link">
+      <a href="../../../interviews/algo/" class="md-nav__link">
         
   
   
@@ -898,7 +898,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../interviews/machine-learning/" class="md-nav__link">
+      <a href="../../../interviews/machine-learning/" class="md-nav__link">
         
   
   
@@ -926,7 +926,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../interviews/system-design/" class="md-nav__link">
+      <a href="../../../interviews/system-design/" class="md-nav__link">
         
   
   
@@ -954,7 +954,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../interviews/llm-engineer/" class="md-nav__link">
+      <a href="../../../interviews/llm-engineer/" class="md-nav__link">
         
   
   
@@ -982,7 +982,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../interviews/project-review/" class="md-nav__link">
+      <a href="../../../interviews/project-review/" class="md-nav__link">
         
   
   
@@ -1030,32 +1030,63 @@
   
 
 
-<h1 id="vllm">vLLM 代码库<a class="headerlink" href="#vllm" title="Permanent link">&para;</a></h1>
-<p>模块
-- Entrypoint (LLM, API server)
-- Engine
-- Scheduler
-- KV Cache manager
-- Evictor
-- Worker
-- Model executer (Model runner)
-- Modelling
-- Attention backend</p>
-<p>周边
-- Preprocessing / Postprocessing (tokenizer, detokenizer, sampler, multimodal processor)
-- Distributed
-- 'torch.compile'
-- Observability
-- Config 
-- Testing
-- CI / CD
-- Formatting</p>
-<p>优化
-- Speculative decoding
-- Disaggregated prefilling
-- Chunked prefill
-- Cascade inference
-- Prefix caching</p>
+<h1 id="1"><strong>1. 普通注意力的公式（标准版）</strong><a class="headerlink" href="#1" title="Permanent link">&para;</a></h1>
+<p>标准 self-attention：</p>
+<div class="arithmatex">\[\mathrm{Attn}(Q,K,V) = \mathrm{softmax}\!\left(\frac{QK^\top}{\sqrt{d}}\right)V\]</div>
+<p>复杂度：<span class="arithmatex">\(O(n^2d)\)</span>
+因为 <span class="arithmatex">\(QK^\top\)</span> 是一个 <span class="arithmatex">\(n\times n\)</span> 的矩阵。</p>
+<h1 id="2-linear-attention"><strong>2. linear attention 想要什么？</strong><a class="headerlink" href="#2-linear-attention" title="Permanent link">&para;</a></h1>
+<p>想把注意力写成：
+<span class="arithmatex">\(<span class="arithmatex">\(\mathrm{Attn}(Q,K,V)_t = f(Q_t)^\top\, S_t\)</span>\)</span>
+其中 <span class="arithmatex">\(S_t\)</span> 是可累加的状态：
+<span class="arithmatex">\(<span class="arithmatex">\(S_t = \sum_{j=1}^{t} g(K_j, V_j)\)</span>\)</span></p>
+<ul>
+<li>每一步只更新一次 <span class="arithmatex">\(S_t\)</span></li>
+<li>然后query只做一次 <span class="arithmatex">\(f(Q_t)^\top S_t\)</span></li>
+</ul>
+<p>所以能从 <span class="arithmatex">\(O(n^2)\)</span> 变成 <span class="arithmatex">\(O(n)\)</span>。</p>
+<h1 id="3-linear-attention-kernel-trick"><strong>3. linear attention 的核分解（kernel trick）</strong><a class="headerlink" href="#3-linear-attention-kernel-trick" title="Permanent link">&para;</a></h1>
+<p>softmax 非常黏，不可分解。
+所以把 softmax attention 近似成一个 <strong>可分解核</strong>：
+<span class="arithmatex">\(<span class="arithmatex">\(\exp(QK^\top) \approx \phi(Q) \phi(K)^\top\)</span>\)</span>
+于是注意力变成：
+<span class="arithmatex">\(<span class="arithmatex">\(\mathrm{Attn}(Q,K,V)_t = \sum_{j=1}^{t} \phi(Q_t)^\top \phi(K_j)\, V_j\)</span>\)</span>把 <span class="arithmatex">\(\phi(Q_t)\)</span> 提出来：
+<span class="arithmatex">\(<span class="arithmatex">\(\mathrm{Attn}(Q,K,V)_t = \phi(Q_t)^\top \left( \sum_{j=1}^{t} \phi(K_j) V_j \right)\)</span>\)</span>
+现在定义：
+<span class="arithmatex">\(<span class="arithmatex">\(S_t = \sum_{j=1}^{t} \phi(K_j) V_j\)</span>\)</span></p>
+<p>最终得到：
+<span class="arithmatex">\(<span class="arithmatex">\(\mathrm{Attn}(Q,K,V)_t = \phi(Q_t)^\top S_t\)</span>\)</span>
+这就是 linear attention 最核心的结构。</p>
+<h1 id="4"><strong>4. 为什么它是线性的？</strong><a class="headerlink" href="#4" title="Permanent link">&para;</a></h1>
+<p>对每个新 token：
+更新状态：</p>
+<div class="arithmatex">\[S_t = S_{t-1} + \phi(K_t) V_t$$
+计算输出：
+$$O_t = \phi(Q_t)^\top S_t\]</div>
+<p>两步都是 <span class="arithmatex">\(O(d^2)\)</span> 的，
+整个序列长度 <span class="arithmatex">\(n\)</span> → 总复杂度 <span class="arithmatex">\(O(nd^2)\)</span>。
+相比原本的 <span class="arithmatex">\(O(n^2d)\)</span>，省了一个 n。</p>
+<h1 id="5-kv-linear-attention">** 5. 为什么“把位置信息加到 K/V 里会破坏 linear attention”？**<a class="headerlink" href="#5-kv-linear-attention" title="Permanent link">&para;</a></h1>
+<p>因为 linear attention 的累加项要求：
+<span class="arithmatex">\(<span class="arithmatex">\(S_t = \sum_{j=1}^{t} \phi(K_j) V_j\)</span>\)</span>
+必须满足：
+- <span class="arithmatex">\(\phi(K_j)\)</span> 可累加
+- <span class="arithmatex">\(\phi(K_j)\)</span> 不随着 t 再发生变化
+- 位置编码不能让 <span class="arithmatex">\(K_j\)</span> 变得<strong>不可分解</strong>
+如果你把绝对位置编码直接加到 K 上：
+<span class="arithmatex">\(<span class="arithmatex">\(K_j' = K_j + \text{pos}_j\)</span>\)</span>
+那么：
+<span class="arithmatex">\(<span class="arithmatex">\(S_t = \sum_{j=1}^t \phi(K_j + \text{pos}_j)V_j\)</span>\)</span>
+这个结构通常 <strong>不可分解</strong>，
+也不能写成“内容 × 位置”的形式，
+会导致：
+- 状态 S 失效
+- prefix 不能缓存
+- 必须重新算所有 K_j
+于是：
+<strong>linear attention architecture 无法工作。</strong></p>
+<p>对于绝对位置编码，通常<span class="arithmatex">\(\phi(K_j + p_j)\neq \phi(K_j)+\phi(p_j)\)</span> ， 所有位置信息会混在一起。
+对于相对位置编码，<span class="arithmatex">\(\mathrm{score}(t,j)=Q_t^\top K_j + Q_t^\top a_{t-j}\)</span>， 要对 <span class="arithmatex">\(a_{t-j}\)</span> 做实时更新，<strong>累加状态无法构建</strong>。</p>
 
 
 
@@ -1148,12 +1179,12 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.instant", "navigation.tabs", "navigation.top", "navigation.tracking", "toc.integrate", "content.code.copy", "content.tabs.link", "header.autohide"], "search": "../../../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.instant", "navigation.tabs", "navigation.top", "navigation.tracking", "toc.integrate", "content.code.copy", "content.tabs.link", "header.autohide"], "search": "../../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.e71a0d61.min.js"></script>
       
-        <script src="../../../../javascripts/mathjax.js"></script>
+        <script src="../../../javascripts/mathjax.js"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       

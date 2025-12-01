@@ -10,7 +10,7 @@
       
       
       
-        <link rel="canonical" href="https://example.com/notes/systems/vllm/intro/">
+        <link rel="canonical" href="https://example.com/notes/attention-variants/MLA/">
       
       
       
@@ -18,19 +18,19 @@
         
       
       
-      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
     
     
       
-        <title>vLLM 代码库 - Elio AI Hub</title>
+        <title>MLA - Elio AI Hub</title>
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.618322db.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.618322db.min.css">
       
         
-        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -53,7 +53,7 @@
     
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/jetbrains-mono@5.0.8/400.css">
     
-    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#vllm" class="md-skip">
+        <a href="#1-mha" class="md-skip">
           跳转至
         </a>
       
@@ -92,7 +92,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="页眉">
-    <a href="../../../.." title="Elio AI Hub" class="md-header__button md-logo" aria-label="Elio AI Hub" data-md-component="logo">
+    <a href="../../.." title="Elio AI Hub" class="md-header__button md-logo" aria-label="Elio AI Hub" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -112,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              vLLM 代码库
+              MLA
             
           </span>
         </div>
@@ -223,7 +223,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../.." class="md-tabs__link">
+      <a href="../../.." class="md-tabs__link">
         
   
   
@@ -244,7 +244,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../../about/" class="md-tabs__link">
+        <a href="../../../about/" class="md-tabs__link">
           
   
   
@@ -264,7 +264,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../" class="md-tabs__link">
+        <a href="../../" class="md-tabs__link">
           
   
   
@@ -284,7 +284,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../../research/" class="md-tabs__link">
+        <a href="../../../research/" class="md-tabs__link">
           
   
   
@@ -304,7 +304,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../../interviews/" class="md-tabs__link">
+        <a href="../../../interviews/" class="md-tabs__link">
           
   
   
@@ -340,7 +340,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../../.." title="Elio AI Hub" class="md-nav__button md-logo" aria-label="Elio AI Hub" data-md-component="logo">
+    <a href="../../.." title="Elio AI Hub" class="md-nav__button md-logo" aria-label="Elio AI Hub" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -370,7 +370,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../.." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         
   
   
@@ -447,7 +447,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../about/" class="md-nav__link">
+      <a href="../../../about/" class="md-nav__link">
         
   
   
@@ -532,7 +532,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../" class="md-nav__link">
+      <a href="../../" class="md-nav__link">
         
   
   
@@ -560,7 +560,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../efficient-inference/" class="md-nav__link">
+      <a href="../../efficient-inference/" class="md-nav__link">
         
   
   
@@ -588,7 +588,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../positional-encodings/" class="md-nav__link">
+      <a href="../../positional-encodings/" class="md-nav__link">
         
   
   
@@ -616,7 +616,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../attention-variants/" class="md-nav__link">
+      <a href="../" class="md-nav__link">
         
   
   
@@ -644,7 +644,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../" class="md-nav__link">
+      <a href="../../systems/" class="md-nav__link">
         
   
   
@@ -672,7 +672,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../miscellaneous/" class="md-nav__link">
+      <a href="../../miscellaneous/" class="md-nav__link">
         
   
   
@@ -757,7 +757,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../research/" class="md-nav__link">
+      <a href="../../../research/" class="md-nav__link">
         
   
   
@@ -842,7 +842,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../interviews/" class="md-nav__link">
+      <a href="../../../interviews/" class="md-nav__link">
         
   
   
@@ -870,7 +870,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../interviews/algo/" class="md-nav__link">
+      <a href="../../../interviews/algo/" class="md-nav__link">
         
   
   
@@ -898,7 +898,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../interviews/machine-learning/" class="md-nav__link">
+      <a href="../../../interviews/machine-learning/" class="md-nav__link">
         
   
   
@@ -926,7 +926,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../interviews/system-design/" class="md-nav__link">
+      <a href="../../../interviews/system-design/" class="md-nav__link">
         
   
   
@@ -954,7 +954,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../interviews/llm-engineer/" class="md-nav__link">
+      <a href="../../../interviews/llm-engineer/" class="md-nav__link">
         
   
   
@@ -982,7 +982,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../interviews/project-review/" class="md-nav__link">
+      <a href="../../../interviews/project-review/" class="md-nav__link">
         
   
   
@@ -1030,32 +1030,59 @@
   
 
 
-<h1 id="vllm">vLLM 代码库<a class="headerlink" href="#vllm" title="Permanent link">&para;</a></h1>
-<p>模块
-- Entrypoint (LLM, API server)
-- Engine
-- Scheduler
-- KV Cache manager
-- Evictor
-- Worker
-- Model executer (Model runner)
-- Modelling
-- Attention backend</p>
-<p>周边
-- Preprocessing / Postprocessing (tokenizer, detokenizer, sampler, multimodal processor)
-- Distributed
-- 'torch.compile'
-- Observability
-- Config 
-- Testing
-- CI / CD
-- Formatting</p>
-<p>优化
-- Speculative decoding
-- Disaggregated prefilling
-- Chunked prefill
-- Cascade inference
-- Prefix caching</p>
+<p>From DeepSeek-V2</p>
+<blockquote>
+<p>MLA, which utilizes low-rank key-value joint compression to eliminate the bottleneck of inference-time key-value cache, thus supporting efficient inference.</p>
+</blockquote>
+<p><img alt="MLA overview" src="../img/Pasted%20image%2020251125151259.png" />
+MHA-&gt;heavy KV cache
+-&gt; MQA and GQA, require a smaller magnitude of KV Cache, but performance does not match MHA
+<img alt="MHA vs MQA vs GQA" src="../img/Pasted%20image%2020251125153732.png" /></p>
+<h1 id="1-mha">1. MHA<a class="headerlink" href="#1-mha" title="Permanent link">&para;</a></h1>
+<p><span class="arithmatex">\(h_t \in \mathbb{R}^d\)</span>, the attention input of the t-th token at an attn layer.
+<span class="arithmatex">\(q_t, k_t, v_t \in \mathbb{R}^{d_h n_h}\)</span> , 
+<span class="arithmatex">\(W^Q, W^K, W^V \in \mathbb{R}^{d_h n_h \times d}\)</span>,
+<span class="arithmatex">\(d_h\)</span> is the dimension per head,
+<span class="arithmatex">\(n_h\)</span> is the number of heads.
+$$
+q_t = W^Q h_t,
+k_t = W^K h_t,
+v_t = W^V h_t
+$$
+then
+<img alt="KV cache cost" src="../img/Pasted%20image%2020251125152004.png" />
+<span class="arithmatex">\(W^O \in \mathbb{R}^{d \times d_h n_h}\)</span> denotes the output proj matrix
+All k and v need to be cached, so MHA needs to cache $$
+2 n_h d_h l 
+$$
+elements for each token.</p>
+<blockquote>
+<p>In model deployment, this heavy KV cache is a large bottleneck that limits the maximum batch size and sequence length.</p>
+</blockquote>
+<h1 id="2-low-rank-k-v-joint-compression">2. Low-Rank K-V Joint Compression<a class="headerlink" href="#2-low-rank-k-v-joint-compression" title="Permanent link">&para;</a></h1>
+<p>The core of MLA is the low-rank joint compression for keys and values to reduce KV cache.
+$$
+\begin{gather}
+c_t^{KV} = W^{DKV}h_t, \; \in \mathbb{R}^{d_c} \
+k_t^{C} = W^{UK}c_t^{KV}, \; \in \mathbb{R}^{d_n h_n} \
+v_t^{C} = W^{UV}c_t^{KV}, \; \in \mathbb{R}^{d_n h_n} 
+\end{gather}
+$$
+第一步是压缩，<span class="arithmatex">\(d_c &lt;&lt; d_h n_h\)</span>
+第二步是 up_projection，恢复成 <span class="arithmatex">\(d_h n_h\)</span>
+存储的时候只要存 <span class="arithmatex">\(c_t^{KV}, \quad d_c l\)</span> elements, <span class="arithmatex">\(l\)</span> denotes the number of layers</p>
+<blockquote>
+<p><span class="arithmatex">\(𝑊^{𝑈𝐾}\)</span> can be absorbed into <span class="arithmatex">\(𝑊^𝑄\)</span>, and <span class="arithmatex">\(𝑊^{𝑈𝑉}\)</span> can be absorbedinto <span class="arithmatex">\(𝑊^𝑂\)</span></p>
+</blockquote>
+<p>训练的时候，为了 reduce the activation memory, 对query 也使用 low-rank compression, 即使不会减少 KV cache
+$$
+\begin{gather}
+c_t^{Q} = W^{DQ}h_t, \; \in \mathbb{R}^{d_c'} \
+q_t^{C} = W^{UQ}c_t^{Q}, \; \in \mathbb{R}^{d_n h_n} \
+\end{gather}
+$$
+<span class="arithmatex">\(d_c' &lt;&lt; d_h n_h\)</span></p>
+<h1 id="3-decoupled-rotary-position-embedding">3. Decoupled Rotary Position Embedding<a class="headerlink" href="#3-decoupled-rotary-position-embedding" title="Permanent link">&para;</a></h1>
 
 
 
@@ -1148,12 +1175,12 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.instant", "navigation.tabs", "navigation.top", "navigation.tracking", "toc.integrate", "content.code.copy", "content.tabs.link", "header.autohide"], "search": "../../../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.instant", "navigation.tabs", "navigation.top", "navigation.tracking", "toc.integrate", "content.code.copy", "content.tabs.link", "header.autohide"], "search": "../../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.e71a0d61.min.js"></script>
       
-        <script src="../../../../javascripts/mathjax.js"></script>
+        <script src="../../../javascripts/mathjax.js"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
