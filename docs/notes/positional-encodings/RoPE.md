@@ -51,8 +51,11 @@ $$
 # 3. RoPE
 希望注意力分数 qₘᵀkₙ 不要依赖 token 各自的绝对位置 m、n，而只依赖它们的“相对位置 m−n“
 
-定义一个函数，只考虑2个词向量和位置差
-$$<f_q(x_m, m), f_k(x_n, n)> = g(x_m, x_n, m - n)$$
+定义一个函数，只考虑 2 个词向量和位置差：
+
+$$
+<f_q(x_m, m), f_k(x_n, n)> = g(x_m, x_n, m - n)
+$$
 
 ## **3.1 2D case**
 在二维情形（d = 2）下，可以利用复数平面上的几何性质来展示 RoPE 的核心思想。
@@ -62,11 +65,13 @@ $$<f_q(x_m, m), f_k(x_n, n)> = g(x_m, x_n, m - n)$$
 $W_q x_m$ 和 $W_k x_n$
 
 RoPE 将它们表示为复数并按位置进行旋转：
+
 $$
-f_q(x_m, m) = (W_q x_m) e^{im\theta}
-$$$$
+f_q(x_m, m) = (W_q x_m) e^{im\theta} \\
 f_k(x_n, n) = (W_k x_n) e^{in\theta}
-$$其中 $\theta$ 是预设的非零常数。
+$$
+
+其中 $\theta$ 是预设的非零常数。
 ### **相对位置如何出现？**
 注意力的核心是内积：
 $$
@@ -132,5 +137,5 @@ $$
 
 ### 3.3.2 Linear Attention
 ![RoPE with linear attention](img/Pasted image 20251128134804.png)
-用线性函数，比如 $$ \phi(x) = elu(x) + 1 $$
+用线性函数，比如 $\phi(x) = \mathrm{elu}(x) + 1$
 分母不变，防止为0

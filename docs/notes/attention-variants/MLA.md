@@ -20,10 +20,13 @@ v_t = W^V h_t
 $$
 then
 ![KV cache cost](img/Pasted image 20251125152004.png)
-$W^O \in \mathbb{R}^{d \times d_h n_h}$ denotes the output proj matrix
-All k and v need to be cached, so MHA needs to cache $$
+$W^O \in \mathbb{R}^{d \times d_h n_h}$ denotes the output proj matrix  
+All k and v need to be cached, so MHA needs to cache
+
+$$
 2 n_h d_h l 
 $$
+
 elements for each token.
 > In model deployment, this heavy KV cache is a large bottleneck that limits the maximum batch size and sequence length.
 
