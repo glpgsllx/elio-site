@@ -1089,11 +1089,13 @@ O_t = \phi(Q_t)^\top S_t
 <div class="arithmatex">\[
 S_t = \sum_{j=1}^{t} \phi(K_j) V_j
 \]</div>
-<p>必须满足：
-- <span class="arithmatex">\(\phi(K_j)\)</span> 可累加
-- <span class="arithmatex">\(\phi(K_j)\)</span> 不随着 t 再发生变化
-- 位置编码不能让 <span class="arithmatex">\(K_j\)</span> 变得<strong>不可分解</strong>
-如果你把绝对位置编码直接加到 K 上：</p>
+<p>必须满足：</p>
+<ul>
+<li><span class="arithmatex">\(\phi(K_j)\)</span> 可累加</li>
+<li><span class="arithmatex">\(\phi(K_j)\)</span> 不随着 t 再发生变化</li>
+<li>位置编码不能让 <span class="arithmatex">\(K_j\)</span> 变得<strong>不可分解</strong>
+如果你把绝对位置编码直接加到 K 上：</li>
+</ul>
 <div class="arithmatex">\[
 K_j' = K_j + \text{pos}_j
 \]</div>
@@ -1101,11 +1103,13 @@ K_j' = K_j + \text{pos}_j
 <div class="arithmatex">\[
 S_t = \sum_{j=1}^t \phi(K_j + \text{pos}_j)V_j
 \]</div>
-<p>这个结构通常 <strong>不可分解</strong>，也不能写成“内容 × 位置”的形式，会导致：
-- 状态 S 失效
-- prefix 不能缓存
-- 必须重新算所有 K_j
-于是：<strong>linear attention architecture 无法工作。</strong></p>
+<p>这个结构通常 <strong>不可分解</strong>，也不能写成“内容 × 位置”的形式，会导致：</p>
+<ul>
+<li>状态 S 失效</li>
+<li>prefix 不能缓存</li>
+<li>必须重新算所有 K_j</li>
+</ul>
+<p>于是：<strong>linear attention architecture 无法工作。</strong></p>
 <p>对于绝对位置编码，通常 <span class="arithmatex">\(\phi(K_j + p_j)\neq \phi(K_j)+\phi(p_j)\)</span>，所有位置信息会混在一起。<br />
 对于相对位置编码，<span class="arithmatex">\(\mathrm{score}(t,j)=Q_t^\top K_j + Q_t^\top a_{t-j}\)</span>，要对 <span class="arithmatex">\(a_{t-j}\)</span> 做实时更新，<strong>累加状态无法构建</strong>。</p>
 
