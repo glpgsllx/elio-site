@@ -1066,16 +1066,18 @@ $$
 <blockquote>
 <p>Deberta: Decoding-enhanced bert with disentangled attention.</p>
 </blockquote>
-<p>$$
+<div class="arithmatex">\[
 q_m^\top k_n
 = x_m^\top W_q^\top W_k x_n
 + x_m^\top W_q^\top W_k \,\tilde p_{\,m-n}
 + \tilde p_{\,m-n}^\top W_q^\top W_k x_n .
-$$
-- <span class="arithmatex">\(\tilde p_{m-n}\)</span> 是相对位置 embedding（DeBERTa 使用 disentangled 方式），
-- 第一项是“内容–内容”注意力，
-- 第二项是“内容–位置”，
-- 第三项是“位置–内容”。</p>
+\]</div>
+<ul>
+<li><span class="arithmatex">\(\tilde p_{m-n}\)</span> 是相对位置 embedding（DeBERTa 使用 disentangled 方式），</li>
+<li>第一项是“内容–内容”注意力，</li>
+<li>第二项是“内容–位置”，</li>
+<li>第三项是“位置–内容”。</li>
+</ul>
 <p>属于“加法型位置注入”，对后续的线性化、自回归缓存等机制依然不友好[[Linear-Attn(org)]]</p>
 <h1 id="3-rope">3. RoPE<a class="headerlink" href="#3-rope" title="Permanent link">&para;</a></h1>
 <p>希望注意力分数 qₘᵀkₙ 不要依赖 token 各自的绝对位置 m、n，而只依赖它们的“相对位置 m−n“</p>
