@@ -1,6 +1,7 @@
 > Despite the effectiveness of these approaches, they commonly add the position information to the context representation and thus render them unsuitable for the linear self-attention architecture. [Linear-Attn(org)](../attention-variants/Linear-Attn(org).md)
 
 3个特性
+
 - sequence length flexibility
 - decaying inter-token dependency with increasing relative distances
 - capability of equipping the linear self-attention with relative position encoding

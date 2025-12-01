@@ -1077,19 +1077,21 @@ $$
 <p>属于“加法型位置注入”，对后续的线性化、自回归缓存等机制依然不友好[[Linear-Attn(org)]]</p>
 <h1 id="3-rope">3. RoPE<a class="headerlink" href="#3-rope" title="Permanent link">&para;</a></h1>
 <p>希望注意力分数 qₘᵀkₙ 不要依赖 token 各自的绝对位置 m、n，而只依赖它们的“相对位置 m−n“</p>
-<p>定义一个函数，只考虑2个词向量和位置差
-<span class="arithmatex">\(<span class="arithmatex">\(&lt;f_q(x_m, m), f_k(x_n, n)&gt; = g(x_m, x_n, m - n)\)</span>\)</span></p>
+<p>定义一个函数，只考虑 2 个词向量和位置差：</p>
+<div class="arithmatex">\[
+&lt;f_q(x_m, m), f_k(x_n, n)&gt; = g(x_m, x_n, m - n)
+\]</div>
 <h2 id="31-2d-case"><strong>3.1 2D case</strong><a class="headerlink" href="#31-2d-case" title="Permanent link">&para;</a></h2>
 <p>在二维情形（d = 2）下，可以利用复数平面上的几何性质来展示 RoPE 的核心思想。</p>
 <h3 id="query-key"><strong>复数形式的 Query / Key</strong><a class="headerlink" href="#query-key" title="Permanent link">&para;</a></h3>
 <p>令位置为 m、n 的向量经过线性变换后分别为：
 <span class="arithmatex">\(W_q x_m\)</span> 和 <span class="arithmatex">\(W_k x_n\)</span></p>
-<p>RoPE 将它们表示为复数并按位置进行旋转：
-$$
-f_q(x_m, m) = (W_q x_m) e^{im\theta}
-$$$$
+<p>RoPE 将它们表示为复数并按位置进行旋转：</p>
+<div class="arithmatex">\[
+f_q(x_m, m) = (W_q x_m) e^{im\theta} \\
 f_k(x_n, n) = (W_k x_n) e^{in\theta}
-$$其中 <span class="arithmatex">\(\theta\)</span> 是预设的非零常数。</p>
+\]</div>
+<p>其中 <span class="arithmatex">\(\theta\)</span> 是预设的非零常数。</p>
 <h3 id="_1"><strong>相对位置如何出现？</strong><a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
 <p>注意力的核心是内积：
 $$
@@ -1133,7 +1135,7 @@ $$
 <h3 id="331-long-term-decay">3.3.1 Long-term decay<a class="headerlink" href="#331-long-term-decay" title="Permanent link">&para;</a></h3>
 <h3 id="332-linear-attention">3.3.2 Linear Attention<a class="headerlink" href="#332-linear-attention" title="Permanent link">&para;</a></h3>
 <p><img alt="RoPE with linear attention" src="../img/Pasted%20image%2020251128134804.png" />
-用线性函数，比如 $$ \phi(x) = elu(x) + 1 $$
+用线性函数，比如 <span class="arithmatex">\(\phi(x) = \mathrm{elu}(x) + 1\)</span>
 分母不变，防止为0</p>
 
 

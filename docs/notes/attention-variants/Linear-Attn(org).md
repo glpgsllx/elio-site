@@ -82,6 +82,7 @@ S_t = \sum_{j=1}^{t} \phi(K_j) V_j
 $$
 
 必须满足：
+
 - $\phi(K_j)$ 可累加
 - $\phi(K_j)$ 不随着 t 再发生变化
 - 位置编码不能让 $K_j$ 变得**不可分解**
@@ -98,9 +99,11 @@ S_t = \sum_{j=1}^t \phi(K_j + \text{pos}_j)V_j
 $$
 
 这个结构通常 **不可分解**，也不能写成“内容 × 位置”的形式，会导致：
+
 - 状态 S 失效
 - prefix 不能缓存
 - 必须重新算所有 K_j
+
 于是：**linear attention architecture 无法工作。**
 
 对于绝对位置编码，通常 $\phi(K_j + p_j)\neq \phi(K_j)+\phi(p_j)$，所有位置信息会混在一起。  

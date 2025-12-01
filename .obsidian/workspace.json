@@ -11,12 +11,14 @@
             "id": "3cde62b3be3fa1b7",
             "type": "leaf",
             "state": {
-              "type": "image",
+              "type": "markdown",
               "state": {
-                "file": "docs/notes/positional-encodings/img/Pasted image 20251128134804.png"
+                "file": "docs/notes/positional-encodings/RoPE.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-image",
-              "title": "Pasted image 20251128134804"
+              "icon": "lucide-file",
+              "title": "RoPE"
             }
           }
         ]
@@ -181,8 +183,11 @@
       "bases:Create new base": false
     }
   },
-  "active": "3c49a0d4e2a1a0d1",
+  "active": "3cde62b3be3fa1b7",
   "lastOpenFiles": [
+    "docs/notes/attention-variants/MLA.md",
+    "docs/notes/systems/flashattention/kernel-notes.md",
+    "docs/notes/positional-encodings/img/Pasted image 20251128134804.png",
     "site/search/search_index.json",
     "site/search",
     "site/research/index.html",
@@ -191,9 +196,8 @@
     "site/notes/systems/vllm/模块/Worker",
     "site/notes/systems/vllm/模块/Scheduler/index.html",
     "site/notes/systems/vllm/模块/Scheduler",
-    "site/notes/systems/vllm/模块/Modeling/index.html",
-    "site/notes/systems/vllm/模块/Modeling",
-    "site/notes/systems/vllm/模块/Model_executer/index.html",
+    "site/notes/attention-variants/Linear-Attn(org)/index.html",
+    "site/notes/attention-variants/Linear-Attn(org)",
     "site/notes/positional-encodings/img/Pasted image 20251128134804.png",
     "site/notes/positional-encodings/img/Pasted image 20251128132128.png",
     "site/notes/positional-encodings/img/Pasted image 20251125162111.png",
@@ -207,14 +211,11 @@
     "docs/research/index.md",
     "docs/research/ANGEL-lab/第二周.md",
     "docs/notes/positional-encodings/RoPE.md",
-    "docs/notes/positional-encodings/img/Pasted image 20251128134804.png",
     "docs/notes/positional-encodings/img/Pasted image 20251125162111.png",
     "docs/notes/positional-encodings/img/Pasted image 20251128132128.png",
     "docs/notes/attention-variants/Linear-Attn(org).md",
-    "docs/notes/systems/flashattention/kernel-notes.md",
     "docs/notes/systems/vllm/kv-cache.md",
     "docs/interviews/algo/index.md",
-    "docs/notes/attention-variants/MLA.md",
     "docs/notes/attention-variants/index.md",
     "docs/notes/efficient-inference/index.md",
     "docs/notes/miscellaneous/index.md",
