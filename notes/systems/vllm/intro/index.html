@@ -1031,31 +1031,25 @@
 
 
 <h1 id="vllm">vLLM 代码库<a class="headerlink" href="#vllm" title="Permanent link">&para;</a></h1>
-<p>模块
-- Entrypoint (LLM, API server)
-- Engine
-- Scheduler
-- KV Cache manager
-- Evictor
-- Worker
-- Model executer (Model runner)
-- Modelling
-- Attention backend</p>
-<p>周边
-- Preprocessing / Postprocessing (tokenizer, detokenizer, sampler, multimodal processor)
-- Distributed
-- 'torch.compile'
-- Observability
-- Config 
-- Testing
-- CI / CD
-- Formatting</p>
-<p>优化
-- Speculative decoding
-- Disaggregated prefilling
-- Chunked prefill
-- Cascade inference
-- Prefix caching</p>
+<p>这里作为 vLLM 相关笔记的总入口，从整体架构出发，链接到各个模块拆解与优化专题。</p>
+<h2 id="_1">模块拆解<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../%E6%A8%A1%E5%9D%97/Entrypoint/">Entrypoint</a>：<code>LLM</code> / API server 入口与请求生命周期。</li>
+<li><a href="../%E6%A8%A1%E5%9D%97/Engine/">Engine</a>：调度核心、执行 pipeline 与资源管理。</li>
+<li><a href="../%E6%A8%A1%E5%9D%97/Scheduler/">Scheduler</a>：请求排队策略、chunk/prefill 调度逻辑。</li>
+<li><a href="../%E6%A8%A1%E5%9D%97/KV%20Cache%20Manager/">KV Cache Manager</a>：KV cache 生命周期、分页与回收。</li>
+<li><a href="../%E6%A8%A1%E5%9D%97/Evictor/">Evictor</a>：eviction 策略、冷热数据与显存回收。</li>
+<li><a href="../%E6%A8%A1%E5%9D%97/Worker/">Worker</a>：worker 角色、与 engine 的通信协议。</li>
+<li><a href="../%E6%A8%A1%E5%9D%97/Model_executer/">Model Executor</a>：模型前向执行、batch 合并与张量布局。</li>
+<li><a href="../%E6%A8%A1%E5%9D%97/Modeling/">Modeling</a>：模型定义、权重加载与与 HF/原生接口的对接。</li>
+<li><a href="../%E6%A8%A1%E5%9D%97/Attention%20backend/">Attention backend</a>：不同 Attention kernel / backend 的抽象与选择。</li>
+</ul>
+<h2 id="_2">周边与优化<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../%E5%91%A8%E8%BE%B9%26%E4%BC%98%E5%8C%96/Distributed%20Inference/">Distributed Inference</a>：多机多卡推理、分布式拓扑与通信开销。</li>
+<li><a href="../kv-cache/">KV Cache 管理专题</a>：从抽象接口到 PagedAttention slot 分配与显存碎片治理。</li>
+<li>（预留）Speculative decoding / Chunked prefill / Cascade inference / Prefix caching 等优化可以在这里继续拆分成单独文件后挂链接。</li>
+</ul>
 
 
 
