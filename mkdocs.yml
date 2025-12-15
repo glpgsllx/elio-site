@@ -68,6 +68,8 @@ theme:
     - navigation.top
     - navigation.tracking
     - toc.integrate
+    - toc.follow
+    - toc.sticky
     - content.code.copy
     - content.tabs.link
     - header.autohide
