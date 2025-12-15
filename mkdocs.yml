@@ -8,13 +8,37 @@ nav:
       - 关于我: about/index.md
   - Notes:
       - 总览: notes/index.md
-      - 高效推理: notes/efficient-inference/index.md
-      - 位置编码: notes/positional-encodings/index.md
-      - 注意力变体: notes/attention-variants/index.md
-      - 系统与优化: notes/systems/index.md
+      - 高效推理:
+          - 总览: notes/efficient-inference/index.md
+      - 位置编码:
+          - 总览: notes/positional-encodings/index.md
+          - RoPE: notes/positional-encodings/RoPE.md
+      - 注意力变体:
+          - 总览: notes/attention-variants/index.md
+          - Linear Attention: "notes/attention-variants/Linear-Attn(org).md"
+          - MLA: notes/attention-variants/MLA.md
+      - 系统与优化:
+          - 总览: notes/systems/index.md
+          - FlashAttention 内核拆解: notes/systems/flashattention/kernel-notes.md
+          - vLLM:
+              - 总览: notes/systems/vllm/intro.md
+              - KV Cache 管理: notes/systems/vllm/kv-cache.md
+              - 周边与优化:
+                  - Distributed Inference: "notes/systems/vllm/周边&优化/Distributed Inference.md"
+              - 模块:
+                  - Entrypoint: "notes/systems/vllm/模块/Entrypoint.md"
+                  - Engine: "notes/systems/vllm/模块/Engine.md"
+                  - Scheduler: "notes/systems/vllm/模块/Scheduler.md"
+                  - KV Cache Manager: "notes/systems/vllm/模块/KV Cache Manager.md"
+                  - Evictor: "notes/systems/vllm/模块/Evictor.md"
+                  - Worker: "notes/systems/vllm/模块/Worker.md"
+                  - Model Executor: "notes/systems/vllm/模块/Model_executer.md"
+                  - Attention backend: "notes/systems/vllm/模块/Attention backend.md"
       - 杂项: notes/miscellaneous/index.md
   - Research:
       - 专题主页: research/index.md
+      - ANGEL Lab:
+          - 周报：医学诊疗指南数据源梳理（2025-12-08 ~ 2025-12-14）: research/ANGEL-lab/week_reports/12/8-12/1208-1214.md
   - Interviews:
       - 总览: interviews/index.md
       - 算法准备: interviews/algo/index.md
@@ -25,9 +49,6 @@ nav:
 theme:
   name: material
   language: zh
-  font:
-    text: Inter
-    code: JetBrains Mono
   palette:
     - scheme: default
       primary: indigo
@@ -73,8 +94,7 @@ markdown_extensions:
   - pymdownx.arithmatex:
       generic: true
 extra_css:
-  - https://cdn.jsdelivr.net/npm/@fontsource/inter@5.0.8/400.css
-  - https://cdn.jsdelivr.net/npm/@fontsource/jetbrains-mono@5.0.8/400.css
+  - styles/typography.css
 extra_javascript:
   - javascripts/mathjax.js
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js

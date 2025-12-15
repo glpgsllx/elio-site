@@ -1,0 +1,58 @@
+/* 全站字体与排版优化，兼容中英文 */
+
+:root {
+  /* 正文字体：优先系统无衬线 + 常见中文字体 */
+  --md-text-font: system-ui, -apple-system, BlinkMacSystemFont,
+                  "SF Pro Text", "SF Pro SC", "PingFang SC",
+                  "Noto Sans CJK SC", "Noto Sans SC",
+                  "Microsoft YaHei", sans-serif;
+
+  /* 代码字体：等宽字体为主，找不到时回退系统等宽 */
+  --md-code-font: "JetBrains Mono", ui-monospace, SFMono-Regular,
+                  Menlo, Monaco, Consolas, "Liberation Mono",
+                  "Courier New", monospace;
+}
+
+/* 内容区域稍微收窄一点，阅读更像博客而不是论文 */
+.md-grid {
+  max-width: 900px;
+}
+
+/* 顶部留白收窄一些，让标题不要离顶部太远 */
+.md-content__inner {
+  margin-top: 1.5rem;
+}
+
+/* 标题层级略微收紧，避免字号过大 */
+.md-typeset h1 {
+  font-size: 1.7rem;
+  font-weight: 650;
+}
+
+.md-typeset h2 {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.md-typeset h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+/* 段落行距略放大，适合长文阅读 */
+.md-typeset p {
+  line-height: 1.7;
+}
+
+/* 列表行距稍微拉开一点，避免挤在一起 */
+.md-typeset ul,
+.md-typeset ol {
+  line-height: 1.6;
+}
+
+/* 代码块稍微缩小一点字号，减少压迫感 */
+.md-typeset pre code {
+  font-size: 0.85em;
+}
+
+
