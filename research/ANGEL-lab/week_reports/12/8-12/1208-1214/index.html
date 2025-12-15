@@ -1678,8 +1678,6 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
-        
-      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
@@ -1722,8 +1720,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -1732,6 +1728,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#gemini-sources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gemini 列的sources
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Gemini 列的sources">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#nlp" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1741,8 +1749,8 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1752,12 +1760,144 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
         第三梯队：综合性指南库（适合批量爬取）
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        指南整理
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="指南整理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NICE ✅
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#who-iris" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        WHO IRIS
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nccn" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NCCN
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        中国卫健委
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pmc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PMC
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mimic-iv" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MIMIC-IV
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#caca" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CACA 中国肿瘤整合诊治指南
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#csco" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CSCO 中国临床肿瘤学会 ❌
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        下载后续
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        论文阅读
       
     </span>
   </a>
@@ -2033,11 +2173,13 @@
   
 
 
-<p>医学诊疗指南</p>
-<h1 id="gemini-sources">Gemini 列的sources<a class="headerlink" href="#gemini-sources" title="Permanent link">&para;</a></h1>
+  <h1>周报：医学诊疗指南数据源梳理（2025-12-08 ~ 2025-12-14）</h1>
+
+<p># 医学诊疗指南</p>
+<h2 id="gemini-sources">Gemini 列的sources<a class="headerlink" href="#gemini-sources" title="Permanent link">&para;</a></h2>
 <p>对于构建<strong>大规模、自动化</strong>的医疗知识库（Knowledge Base），数据源的选择至关重要。你需要的是那些<strong>格式规范、更新及时、且尽量免费公开（Open Access）</strong>的指南。</p>
 <p>以下是国外最权威、且最适合用于构建 NLP/LLM 知识库的医疗指南来源清单：</p>
-<h2 id="nlp">第一梯队：结构最清晰、最适合 NLP 提取（强烈推荐）<a class="headerlink" href="#nlp" title="Permanent link">&para;</a></h2>
+<h3 id="nlp">第一梯队：结构最清晰、最适合 NLP 提取（强烈推荐）<a class="headerlink" href="#nlp" title="Permanent link">&para;</a></h3>
 <p>这些机构的指南通常包含明确的“流程图”、“推荐等级”和“决策树”，非常适合你的 Text2DT 或 Text2KB 任务。</p>
 <ol>
 <li>
@@ -2076,7 +2218,7 @@
 <li>对你的价值： 竞品 MedGUIDE 用的就是这个。你可以爬取下来做更大规模的覆盖。</li>
 </ol>
 <hr />
-<h2 id="_1">第二梯队：专业学科权威（含金量极高）<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h3 id="_1">第二梯队：专业学科权威（含金量极高）<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
 <p>这些通常是各专科的顶级学会，它们的指南通常发表在顶级期刊（如 JACC, Circulation, Diabetes Care）上，通常是免费开放获取（Open Access）的 PDF。</p>
 <ol>
 <li>
@@ -2123,7 +2265,7 @@
 <li>网址： www.idsociety.org/practice-guidelines</li>
 </ol>
 <hr />
-<h2 id="_2">第三梯队：综合性指南库（适合批量爬取）<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h3 id="_2">第三梯队：综合性指南库（适合批量爬取）<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <p>如果你不想一个一个学会去找，可以去这些聚合平台，但需要注意数据清洗的难度。</p>
 <ol>
 <li>
@@ -2183,35 +2325,35 @@
 <p>使用 AHA 和 ADA 的纯文本指南，训练模型从文本中提取 "If-Then" 规则。</p>
 </li>
 </ol>
-<h1 id="_3">指南整理<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h1>
-<h2 id="nice">NICE ✅<a class="headerlink" href="#nice" title="Permanent link">&para;</a></h2>
+<h2 id="_3">指南整理<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h3 id="nice">NICE ✅<a class="headerlink" href="#nice" title="Permanent link">&para;</a></h3>
 <p>英国与威尔士</p>
 <p>指南列表：https://www.nice.org.uk/guidance/published?sp=on</p>
 <p>url例子：https://www.nice.org.uk/guidance/ta1116</p>
 <p>代码已经准备好</p>
-<h2 id="who-iris">WHO IRIS<a class="headerlink" href="#who-iris" title="Permanent link">&para;</a></h2>
+<h3 id="who-iris">WHO IRIS<a class="headerlink" href="#who-iris" title="Permanent link">&para;</a></h3>
 <p>需要继续过滤</p>
-<h2 id="nccn">NCCN<a class="headerlink" href="#nccn" title="Permanent link">&para;</a></h2>
+<h3 id="nccn">NCCN<a class="headerlink" href="#nccn" title="Permanent link">&para;</a></h3>
 <p>美国癌症数据集
 需要注册账号</p>
 <p>https://www.nccn.org/business-policy/business/firewall-policy</p>
-<h2 id="_4">中国卫健委<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<h3 id="_4">中国卫健委<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <p>https://www.nhc.gov.cn/wjw/s9491/wsbz.shtml</p>
-<h2 id="pmc">PMC<a class="headerlink" href="#pmc" title="Permanent link">&para;</a></h2>
+<h3 id="pmc">PMC<a class="headerlink" href="#pmc" title="Permanent link">&para;</a></h3>
 <p>https://pmc.ncbi.nlm.nih.gov/tools/openftlist/</p>
-<h2 id="mimic-iv">MIMIC-IV<a class="headerlink" href="#mimic-iv" title="Permanent link">&para;</a></h2>
+<h3 id="mimic-iv">MIMIC-IV<a class="headerlink" href="#mimic-iv" title="Permanent link">&para;</a></h3>
 <p>https://physionet.org/content/mimiciv/3.1/</p>
-<h2 id="caca">CACA 中国肿瘤整合诊治指南<a class="headerlink" href="#caca" title="Permanent link">&para;</a></h2>
+<h3 id="caca">CACA 中国肿瘤整合诊治指南<a class="headerlink" href="#caca" title="Permanent link">&para;</a></h3>
 <p>https://cacaguidelines.cacakp.com/</p>
 <p>可以直接下载</p>
-<h2 id="csco">CSCO 中国临床肿瘤学会 ❌<a class="headerlink" href="#csco" title="Permanent link">&para;</a></h2>
+<h3 id="csco">CSCO 中国临床肿瘤学会 ❌<a class="headerlink" href="#csco" title="Permanent link">&para;</a></h3>
 <p>https://www.csco.org.cn/cn/index.aspx</p>
 <p>需要付费订购</p>
 <p>但是或许可以在其他地方找到，比如https://scsfybjlib.yuntsg.com/official/html/380/newsDetails.html?id=1155&amp;typeId=1</p>
-<h2 id="_5">下载后续<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<h3 id="_5">下载后续<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
 <p>过滤标题？</p>
 <p>pdf删除无用页面</p>
-<h1 id="_6">论文阅读<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h1>
+<h2 id="_6">论文阅读<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
 
 
 
